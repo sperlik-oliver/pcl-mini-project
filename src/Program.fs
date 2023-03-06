@@ -1,6 +1,7 @@
 ﻿type Size = | Small | Medium | Big
+type DrinkName = | Tea | Coffee | Juice 
 
-type Drink = { name: string; basePrice: float; size: Size; priceIncreaseRatio: float }
+type Drink = { name: DrinkName; basePrice: float; size: Size; priceIncreaseRatio: float }
 
 
 let drinkPrice(drink: Drink): float = 
@@ -13,6 +14,6 @@ let drinkPrice(drink: Drink): float =
 
 
 
-let tea(size: Size) = { name = "Tea"; size = size; basePrice = 20.; priceIncreaseRatio = 0.2 }
-let coffee(size: Size) = { name = "Coffee"; size = size; basePrice = 15.; priceIncreaseRatio = 0.3 }
-let juice(size: Size) = { name = "Juice"; size = size; basePrice = 10.; priceIncreaseRatio = 0.4 }
+let tea(size: Size) = { name = DrinkName.Tea; size = size; basePrice = 20.; priceIncreaseRatio = 0.2 }
+let coffee(size: Size) = { name = DrinkName.Coffee; size = size; basePrice = 15.; priceIncreaseRatio = 0.3 }
+let juice(size: Size) = { name = DrinkName.Juice; size = size; basePrice = 10.; priceIncreaseRatio = 0.4 }
