@@ -5,6 +5,12 @@ type Food = { name: string; price: float; }
 type Fruit = { name: string; price: float; }
 type Product = | Food of Food | Fruit of Fruit | Drink of Drink
 
+type MobilePay = { name: string; number: string }
+type CreditCard = { name: string; number: string; cvv: string; expiration: string; }
+type Cash = { currency: string }
+type PaymentDetails = | MobilePay of MobilePay | CreditCard of CreditCard | Cash of Cash
+type Payment = { amount: float; details: PaymentDetails; }
+
 let drinkPrice(drink: Drink): float = 
     let priceIncrease  = 
         match drink.size with
