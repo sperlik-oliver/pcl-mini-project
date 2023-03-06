@@ -1,7 +1,9 @@
 ﻿type Size = | Small | Medium | Big
 
 type Drink = { name: string; basePrice: float; size: Size; priceIncreaseRatio: float }
-
+type Food = { name: string; price: float; }
+type Fruit = { name: string; price: float; }
+type Product = | Food | Fruit | Drink
 
 let drinkPrice(drink: Drink): float = 
     let priceIncrease  = 
