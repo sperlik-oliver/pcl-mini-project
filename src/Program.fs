@@ -1,5 +1,4 @@
 ﻿type Size = | Small | Medium | Big
-
 type Drink = { name: string; basePrice: float; size: Size; priceIncreaseRatio: float }
 type Food = { name: string; price: float; }
 type Fruit = { name: string; price: float; }
@@ -10,6 +9,12 @@ type CreditCard = { name: string; number: string; cvv: string; expiration: strin
 type Cash = { currency: string }
 type PaymentDetails = | MobilePay of MobilePay | CreditCard of CreditCard | Cash of Cash
 type Payment = { amount: float; details: PaymentDetails; }
+
+type VIAPerson = { name: string; VIAID: string; }
+type SOSUPerson = { name: string; SOSUID: string; }
+type Customer = | VIAPerson of VIAPerson | SOSUPerson of SOSUPerson
+
+type Order = { customer: Customer; payments: array<Payment>; products: array<Product> }
 
 let drinkPrice(drink: Drink): float = 
     let priceIncrease  = 
